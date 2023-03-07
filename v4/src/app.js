@@ -8,8 +8,10 @@ const router = express.Router()
 const indexRoute = require('./routes/index-route')
 const productRoute = require('./routes/product-route')
 
-app.use(bodyParser.json()) //Conteudo é convertido para json
-app.use(bodyParser.urlencoded({ extended: false})) //codficar a url, caso digite espaço ele transforma em %20
+app.use(bodyParser.json())          //Conteudo é convertido para json
+app.use(bodyParser.urlencoded({     //codficar a url, caso digite espaço ele transforma em %20
+    extended: false
+})) 
 
 //atribuição de rota no app
 app.use('/', indexRoute)
